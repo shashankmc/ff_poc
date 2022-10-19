@@ -106,6 +106,8 @@ for match in parse('title').find(json_data):
                     else:
                         g.add((concept_uri, RDF.type, RDF.object))
 final_ttl = g.serialize(format='turtle')
+with open('triples_from_json.rdf', 'w') as f:
+    f.write(final_ttl)
 print(final_ttl)
 visualize(g)
 # Visualise the graph

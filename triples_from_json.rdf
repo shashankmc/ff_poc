@@ -1,0 +1,80 @@
+@prefix ns1: <http://schema.org/> .
+@prefix ns2: <http://publications.europa.eu/ontology/cdm#> .
+@prefix ns3: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://en.wikipedia.org/wiki/Air_Operations_Center> a rdf:object ;
+    ns2:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "AIR_OPERATION"^^xsd:string .
+
+<https://en.wikipedia.org/wiki/Aircraft> a rdf:subject ;
+    ns2:category "NON_HUMAN_ACTOR"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "AIRCRAFT"^^xsd:string .
+
+<https://en.wikipedia.org/wiki/Aircraft_Operations_Center> a rdf:object ;
+    ns2:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "OPERATION"^^xsd:string .
+
+<https://en.wikipedia.org/wiki/Drone_aircraft> a rdf:subject ;
+    ns2:category "NON_HUMAN_ACTOR"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "UNMANNED_AIRCRAFT"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/carry_out> a rdf:predicate ;
+    ns2:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "EXECUTE"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/conduct> a rdf:predicate ;
+    ns2:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "EXECUTE"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/may> a rdf:predicate ;
+    ns2:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "MODALS"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/shall> a rdf:predicate ;
+    ns2:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    rdfs:subClassOf ns2:paragraph_legal ;
+    ns3:concept "MODALS"^^xsd:string .
+
+<https://example.com/document1> a ns2:documents ;
+    ns2:date_document "0101-01-01"^^xsd:date ;
+    ns2:domain "Drone laws"^^xsd:string ;
+    ns2:language "en"^^xsd:string ;
+    ns2:region "nl"^^xsd:string ;
+    ns1:amended false ;
+    ns1:name "Document 1"^^xsd:string ;
+    ns1:revised false .
+
+<https://example.com/document1_title1> a ns2:title_short ;
+    ns1:name "Title1"^^xsd:string ;
+    rdfs:subClassOf <https://example.com/document1> .
+
+<https://example.com/document1_title1_section1_article1> ns2:description_editorial "Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg."^^xsd:string ;
+    ns1:name "Article 1"^^xsd:string ;
+    rdfs:subClassOf <https://example.com/document1_title1_section1> .
+
+<https://example.com/document1_title1_section1_article2> ns2:description_editorial "The drone shall conduct an operation within visual range of sight (VLOS) at a height above the ground of not more than 120 m."^^xsd:string ;
+    ns1:name "Article 2"^^xsd:string ;
+    rdfs:subClassOf <https://example.com/document1_title1_section1> .
+
+<https://example.com/document1_title1_section1> a ns2:section ;
+    ns2:description_editorial "Might have some introductory text"^^xsd:string ;
+    ns1:name "Section 1"^^xsd:string ;
+    rdfs:subClassOf <https://example.com/document1_title1> .
+
+ns2:paragraph_legal a <https://en.wikipedia.org/wiki/Sentence_(linguistics)> ;
+    ns1:sentenceRule "MR_AIRCRAFT_OPERATION"^^xsd:string ;
+    ns1:text "Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg."^^xsd:string,
+        "The drone shall conduct an operation within visual range of sight (VLOS) at a height above the ground of not more than 120 m."^^xsd:string ;
+    rdfs:subClassOf <https://example.com/document1_title1_section1_article1>,
+        <https://example.com/document1_title1_section1_article2> .
+
