@@ -19,6 +19,7 @@ def visualize(g):
     # png = dg.create_png()
     # display(Image(png))
 
+
 with open('./json_work_in_progress.json','r') as f:
     json_data = json.load(f)
 
@@ -30,9 +31,19 @@ with open('./json_work_in_progress.json','r') as f:
 document_expression = parse('document')
 g = Graph()
 schema = Namespace('http://schema.org/')
+g.bind('schema', schema)
 cdm = Namespace('http://publications.europa.eu/ontology/cdm#')
+g.bind('cdm', cdm)
 wiki = Namespace('https://en.wikipedia.org/wiki/')
+g.bind('wiki', wiki)
 skos = Namespace('http://www.w3.org/2004/02/skos/core#')
+g.bind('skos', skos)
+dcterms = Namespace('http://purl.org/dc/terms/')
+g.bind('dcterms', dcterms)
+eli = Namespace('http://data.europa.eu/eli/ontology#')
+g.bind('eli', eli)
+frbroo = Namespace('http://iflastandards.info/ns/fr/frbr/frbroo/')
+g.bind('frbroo', frbroo)
 schema_name = schema + 'name'
 # Document is an object.
 # Properties - name (hasName), language (isInLanguage), domain (forDomain),
@@ -40,17 +51,17 @@ schema_name = schema + 'name'
 # amended (isAmended), title (subclassOf) 
 for match in document_expression.find(json_data):
     document_uri = URIRef(match.value['uri'])
-    g.add((document_uri, RDF.type, URIRef(cdm + 'documents')))
+    g.add((document_uri, RDF.type, URIRef(eli + 'Work')))
     g.add((document_uri, URIRef(schema_name), Literal(match.value['name'],\
             datatype=XSD.string)))
     g.add((document_uri, URIRef(cdm + 'language'),
            Literal(match.value['language'], datatype=XSD.string)))
     # Is the domain of the document a case_court_domain or just domain?
-    g.add((document_uri, URIRef(cdm + 'domain'),
+    g.add((document_uri, URIRef(skos + 'is_about'),
            Literal(match.value['domain'], datatype=XSD.string)))
-    g.add((document_uri, URIRef(cdm + 'date_document'),
+    g.add((document_uri, URIRef(eli + 'version_date'),
            Literal(match.value['published_date'], datatype=XSD.date)))
-    g.add((document_uri, URIRef(cdm + 'region'),
+    g.add((document_uri, URIRef(eli + 'AdministrativeArea'),
            Literal(match.value['region'], datatype=XSD.string)))
     # How can we identify if a document is revised?
     g.add((document_uri, URIRef(schema + 'revised'),
@@ -58,34 +69,50 @@ for match in document_expression.find(json_data):
     # How can we idenitfy if a document is amended?
     g.add((document_uri, URIRef(schema + 'amended'),
            Literal(match.value['amended'], datatype=XSD.boolean)))
+    g.add((document_uri, URIRef(eli + 'Manifestation'),
+           Literal(match.value['format'], datatype=XSD.string)))
+    g.add((document_uri, URIRef(eli + 'ResourceType'),
+           Literal(match.value['type'], datatype=XSD.string)))
+    g.add((document_uri, URIRef(eli + 'Agent'),
+           Literal(match.value['passed_by'], datatype=XSD.string)))
+    g.add((document_uri, URIRef(eli + 'Version'),
+           Literal(match.value['version'], datatype=XSD.string)))
+    g.add((document_uri, URIRef(eli + 'InForce'),
+           Literal(match.value['in_force'], datatype=XSD.date)))
 
 # Adding triples for titles, sections, articles, concepts
 for match in parse('title').find(json_data):
     title_uri = URIRef(match.value['uri'])
-    g.add((title_uri, RDFS.subClassOf, document_uri))
-    g.add((title_uri, RDF.type, URIRef(cdm + 'title_short')))
+    g.add((title_uri, URIRef(dcterms + 'isPartOf'), document_uri))
+    g.add((title_uri, RDF.type, URIRef(dcterms + 'title')))
     g.add((title_uri, URIRef(schema_name), Literal(match.value['name'],
                                                         datatype=XSD.string)))
     for section in match.value['sections']:
         section_uri = URIRef(section['uri'])
-        g.add((section_uri, RDFS.subClassOf, title_uri))
-        g.add((section_uri, RDF.type, URIRef(cdm + 'section')))
-        g.add((section_uri, URIRef(schema_name), Literal(section['name'],
+        g.add((section_uri, URIRef(dcterms + 'isPartOf'), title_uri))
+        g.add((section_uri, RDF.type, URIRef(eli + 'LegalResource')))
+        g.add((section_uri, URIRef(eli + 'SubdivisionType'), Literal("Section",
+                                                                     datatype=XSD.string)))
+        g.add((section_uri, URIRef(dcterms + 'title'), Literal(section['name'],
                                                              datatype=XSD.string)))
-        g.add((section_uri, URIRef(cdm + 'description_editorial'), Literal(section['text'],
+        g.add((section_uri, URIRef(dcterms + 'description'), Literal(section['text'],
                                                                     datatype=XSD.string)))
         for article in section['articles']:
             article_uri = URIRef(article['uri'])
-            g.add((article_uri, RDFS.subClassOf, section_uri))
-            g.add((article_uri, URIRef(schema_name),
+            g.add((article_uri, URIRef(dcterms + 'isPartOf'), section_uri))
+            g.add((article_uri, URIRef(eli + 'SubdivisionType'),
+                   Literal("Article", datatype=XSD.string)))
+            g.add((article_uri, URIRef(dcterms + 'title'),
                    Literal(article['name'], datatype=XSD.string)))
-            g.add((article_uri, URIRef(cdm + 'description_editorial'),
+            g.add((article_uri, URIRef(dcterms + 'description'),
                    Literal(article['text'], datatype=XSD.string)))
             for sentence in article['sentences']:
-                sentence_uri = URIRef(cdm + 'paragraph_legal')
+                sentence_uri = URIRef(eli + 'SubdivisionType')
                 # Is subdivision a better option or paragraph_legal for
                 # sentences?
-                g.add((sentence_uri, RDFS.subClassOf, article_uri))
+                g.add((sentence_uri, URIRef(eli + 'SubdivisionType'),
+                       Literal('Sentence', datatype=XSD.string)))
+                g.add((sentence_uri, URIRef(dcterms + 'isPartOf'), article_uri))
                 g.add((sentence_uri, RDF.type, URIRef(wiki +
                                                       'Sentence_(linguistics)')))
                 g.add((sentence_uri, URIRef(schema + 'text'),
@@ -94,7 +121,7 @@ for match in parse('title').find(json_data):
                        Literal(sentence['sentence_rule'], datatype=XSD.string)))
                 for concept in sentence['concepts']:
                     concept_uri = URIRef(concept['uri'])
-                    g.add((concept_uri, RDFS.subClassOf, sentence_uri))
+                    g.add((concept_uri, URIRef(dcterms + 'isPartOf'), sentence_uri))
                     g.add((concept_uri, URIRef(cdm + 'category'),
                           Literal(concept['type'], datatype=XSD.string)))
                     g.add((concept_uri, URIRef(skos + 'concept'),

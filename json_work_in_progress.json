@@ -4,9 +4,15 @@
         "language": "en",
         "domain": "Drone laws",
         "published_date": "01/07/2022",
+        "in_force": "01/09/2022",
+        "date_of_expiry": "",
         "region": "nl",
         "revised": "False",
         "amended": "False",
+        "format": "PDF",
+        "type": "Directive",
+        "passed_by": "EU",
+        "version": "1.0",
         "uri": "https://example.com/document1"
     },
     "title": {
