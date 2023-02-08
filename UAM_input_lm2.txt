@@ -1,9 +1,0 @@
-Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg.
-Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg within a visual range of sight (VLOS).
-The speed of the drone should be limited to 30 km per hour if the horizontal distance between the drone and a building is less than 100 m.
-The drone shall conduct an operation within visual range of sight (VLOS) at a height above the ground of not more than 120 m.
-The drone shall conduct an operation if the horizontal distance between the drone and a building is less than 100 m.
-The drone shall conduct an operation within visual range of sight (VLOS) if the horizontal distance between the drone and a building is less than 100 m.
-The pilot must operate the unmanned aircraft at a distance of 8 km from the reference point of any airport or aerodrome.
-SERA.5005 states that a VFR flight shall not be flown at a height less than 150 m above the ground.
-SERA.5005 states that a VFR flight shall not be flown at a height less than 150 m above the ground except in case of take-off or landing.
