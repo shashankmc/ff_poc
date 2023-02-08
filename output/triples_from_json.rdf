@@ -1,0 +1,91 @@
+@prefix cdm: <http://publications.europa.eu/ontology/cdm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wiki: <https://en.wikipedia.org/wiki/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wiki:Air_Operations_Center a rdf:object ;
+    cdm:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "AIR_OPERATION"^^xsd:string .
+
+wiki:Aircraft a rdf:subject ;
+    cdm:category "NON_HUMAN_ACTOR"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "AIRCRAFT"^^xsd:string .
+
+wiki:Aircraft_Operations_Center a rdf:object ;
+    cdm:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "OPERATION"^^xsd:string .
+
+wiki:Drone_aircraft a rdf:subject ;
+    cdm:category "NON_HUMAN_ACTOR"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "UNMANNED_AIRCRAFT"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/carry_out> a rdf:predicate ;
+    cdm:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "EXECUTE"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/conduct> a rdf:predicate ;
+    cdm:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "EXECUTE"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/may> a rdf:predicate ;
+    cdm:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "MODALS"^^xsd:string .
+
+<https://en.wiktionary.org/wiki/shall> a rdf:predicate ;
+    cdm:category "AIRCRAFT_OPERATION"^^xsd:string ;
+    dcterms:isPartOf eli:SubdivisionType ;
+    skos:concept "MODALS"^^xsd:string .
+
+<https://example.com/document1> a eli:Work ;
+    eli:AdministrativeArea "nl"^^xsd:string ;
+    eli:Agent "EU"^^xsd:string ;
+    eli:InForce "0101-01-01"^^xsd:date ;
+    eli:Manifestation "PDF"^^xsd:string ;
+    eli:ResourceType "Directive"^^xsd:string ;
+    eli:Version "1.0"^^xsd:string ;
+    eli:version_date "0101-01-01"^^xsd:date ;
+    cdm:language "en"^^xsd:string ;
+    schema:amended false ;
+    schema:name "Document 1"^^xsd:string ;
+    schema:revised false ;
+    skos:is_about "Drone laws"^^xsd:string .
+
+<https://example.com/document1_title1> a dcterms:title ;
+    dcterms:isPartOf <https://example.com/document1> ;
+    schema:name "Title1"^^xsd:string .
+
+<https://example.com/document1_title1_section1_article1> eli:SubdivisionType "Article"^^xsd:string ;
+    dcterms:description "Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg."^^xsd:string ;
+    dcterms:isPartOf <https://example.com/document1_title1_section1> ;
+    dcterms:title "Article 1"^^xsd:string .
+
+<https://example.com/document1_title1_section1_article2> eli:SubdivisionType "Article"^^xsd:string ;
+    dcterms:description "The drone shall conduct an operation within visual range of sight (VLOS) at a height above the ground of not more than 120 m."^^xsd:string ;
+    dcterms:isPartOf <https://example.com/document1_title1_section1> ;
+    dcterms:title "Article 2"^^xsd:string .
+
+<https://example.com/document1_title1_section1> a eli:LegalResource ;
+    eli:SubdivisionType "Section"^^xsd:string ;
+    dcterms:description "Might have some introductory text"^^xsd:string ;
+    dcterms:isPartOf <https://example.com/document1_title1> ;
+    dcterms:title "Section 1"^^xsd:string .
+
+eli:SubdivisionType a wiki:Sentence_\(linguistics\) ;
+    eli:SubdivisionType "Sentence"^^xsd:string ;
+    dcterms:isPartOf <https://example.com/document1_title1_section1_article1>,
+        <https://example.com/document1_title1_section1_article2> ;
+    schema:sentenceRule "MR_AIRCRAFT_OPERATION"^^xsd:string ;
+    schema:text "Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg."^^xsd:string,
+        "The drone shall conduct an operation within visual range of sight (VLOS) at a height above the ground of not more than 120 m."^^xsd:string .
+

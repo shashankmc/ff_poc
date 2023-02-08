@@ -1,0 +1,84 @@
+{
+    "txt": "Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10",
+    "language": "en",
+    "analysis": {
+        "MR_AIRCRAFT_OPERATION": {
+            "NON_HUMAN_ACTOR": {
+                "AIRCRAFT": {
+                    "AIRCRAFT": {
+                        "concept": "AIRCRAFT",
+                        "trigger": "Aircraft",
+                        "start": 0,
+                        "end": 8
+                    }
+                }
+            },
+            "DUTY": {
+                "AIRCRAFT_OPERATION": {
+                    "VP_EXECUTE": {
+                        "MODALS": {
+                            "concept": "MODALS",
+                            "trigger": "may",
+                            "start": 9,
+                            "end": 12
+                        },
+                        "EXECUTE": {
+                            "concept": "EXECUTE",
+                            "trigger": "carry out",
+                            "start": 13,
+                            "end": 22
+                        }
+                    },
+                    "AIR_OPERATION": {
+                        "concept": "AIR_OPERATION",
+                        "trigger": "air operations",
+                        "start": 35,
+                        "end": 49
+                    }
+                }
+            },
+            "CONDITION": {
+                "WEIGHT_CONDITION": {
+                    "DEPENDENCE_TRIGGER": {
+                        "IF": {
+                            "concept": "IF",
+                            "trigger": "if",
+                            "start": 50,
+                            "end": 52
+                        }
+                    },
+                    "MTOM": {
+                        "concept": "MTOM",
+                        "trigger": "maximum takeoff mass",
+                        "start": 59,
+                        "end": 79
+                    },
+                    "NEGATIVE": {
+                        "concept": "NEGATIVE",
+                        "trigger": "does not",
+                        "start": 80,
+                        "end": 88
+                    },
+                    "ABOVE": {
+                        "concept": "ABOVE",
+                        "trigger": "exceed",
+                        "start": 89,
+                        "end": 95
+                    },
+                    "NR": {
+                        "concept": "NR",
+                        "trigger": "10",
+                        "start": 96,
+                        "end": 98
+                    },
+                    "UNIT_WEIGHT": {
+                        "concept": "UNIT_WEIGHT",
+                        "trigger": "kg",
+                        "start": 99,
+                        "end": 101
+                    }
+                }
+            }
+        }
+    }
+}

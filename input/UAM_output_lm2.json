@@ -1,0 +1,960 @@
+[
+{
+  "txt": "Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg.",
+  "language": "en",
+  "analysis": {
+    "MR_AIRCRAFT_OPERATION": {
+      "NON_HUMAN_ACTOR": {
+        "AIRCRAFT": {
+          "AIRCRAFT": {
+            "concept": "AIRCRAFT",
+            "trigger": "Aircraft",
+            "start": 0,
+            "end": 8
+          }
+        }
+      },
+      "DUTY": {
+        "AIRCRAFT_OPERATION": {
+          "VP_EXECUTE": {
+            "MODALS": {
+              "concept": "MODALS",
+              "trigger": "may",
+              "start": 9,
+              "end": 12
+            },
+            "EXECUTE": {
+              "concept": "EXECUTE",
+              "trigger": "carry out",
+              "start": 13,
+              "end": 22
+            }
+          },
+          "AIR_OPERATION": {
+            "concept": "AIR_OPERATION",
+            "trigger": "air operations",
+            "start": 35,
+            "end": 49
+          }
+        }
+      },
+      "CONDITION": {
+        "WEIGHT_CONDITION": {
+          "DEPENDENCE_TRIGGER": {
+            "IF": {
+              "concept": "IF",
+              "trigger": "if",
+              "start": 50,
+              "end": 52
+            }
+          },
+          "MTOM": {
+            "concept": "MTOM",
+            "trigger": "maximum takeoff mass",
+            "start": 59,
+            "end": 79
+          },
+          "NEGATIVE": {
+            "concept": "NEGATIVE",
+            "trigger": "does not",
+            "start": 80,
+            "end": 88
+          },
+          "ABOVE": {
+            "concept": "ABOVE",
+            "trigger": "exceed",
+            "start": 89,
+            "end": 95
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "10",
+            "start": 96,
+            "end": 98
+          },
+          "UNIT_WEIGHT": {
+            "concept": "UNIT_WEIGHT",
+            "trigger": "kg",
+            "start": 99,
+            "end": 101
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "Aircraft may carry out specialized air operations if their maximum takeoff mass does not exceed 10 kg within a visual range of sight (VLOS).",
+  "language": "en",
+  "analysis": {
+    "MR_AIRCRAFT_OPERATION": {
+      "NON_HUMAN_ACTOR": {
+        "AIRCRAFT": {
+          "AIRCRAFT": {
+            "concept": "AIRCRAFT",
+            "trigger": "Aircraft",
+            "start": 0,
+            "end": 8
+          }
+        }
+      },
+      "DUTY": {
+        "AIRCRAFT_OPERATION": {
+          "VP_EXECUTE": {
+            "MODALS": {
+              "concept": "MODALS",
+              "trigger": "may",
+              "start": 9,
+              "end": 12
+            },
+            "EXECUTE": {
+              "concept": "EXECUTE",
+              "trigger": "carry out",
+              "start": 13,
+              "end": 22
+            }
+          },
+          "AIR_OPERATION": {
+            "concept": "AIR_OPERATION",
+            "trigger": "air operations",
+            "start": 35,
+            "end": 49
+          }
+        }
+      },
+      "CONDITION": {
+        "WEIGHT_CONDITION": {
+          "DEPENDENCE_TRIGGER": {
+            "IF": {
+              "concept": "IF",
+              "trigger": "if",
+              "start": 50,
+              "end": 52
+            }
+          },
+          "MTOM": {
+            "concept": "MTOM",
+            "trigger": "maximum takeoff mass",
+            "start": 59,
+            "end": 79
+          },
+          "NEGATIVE": {
+            "concept": "NEGATIVE",
+            "trigger": "does not",
+            "start": 80,
+            "end": 88
+          },
+          "ABOVE": {
+            "concept": "ABOVE",
+            "trigger": "exceed",
+            "start": 89,
+            "end": 95
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "10",
+            "start": 96,
+            "end": 98
+          },
+          "UNIT_WEIGHT": {
+            "concept": "UNIT_WEIGHT",
+            "trigger": "kg",
+            "start": 99,
+            "end": 101
+          }
+        }
+      },
+      "CONDITION1": {
+        "VISIBILITY_CONDITION": {
+          "WITHIN": {
+            "concept": "WITHIN",
+            "trigger": "within",
+            "start": 102,
+            "end": 108
+          },
+          "LOS": {
+            "VLOS": {
+              "concept": "VLOS",
+              "trigger": "visual range of sight",
+              "start": 111,
+              "end": 132
+            }
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "The speed of the drone should be limited to 30 km per hour if the horizontal distance between the drone and a building is less than 100 m.",
+  "language": "en",
+  "analysis": {
+    "MR_RESTRICTION_OF_SPEED": {
+      "NON_HUMAN_ACTOR": {
+        "RATE": {
+          "concept": "RATE",
+          "trigger": "speed",
+          "start": 4,
+          "end": 9
+        }
+      },
+      "DUTY": {
+        "SPEED_RESTRICTION": {
+          "MODALS": {
+            "concept": "MODALS",
+            "trigger": "should",
+            "start": 23,
+            "end": 29
+          },
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "limited to",
+            "start": 33,
+            "end": 43
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "30",
+            "start": 44,
+            "end": 46
+          },
+          "UNIT_SPEED": {
+            "concept": "UNIT_SPEED",
+            "trigger": "km per hour",
+            "start": 47,
+            "end": 58
+          }
+        }
+      },
+      "CONDITION7": {
+        "DISTANCE_CONDITION": {
+          "DEPENDENCE_TRIGGER": {
+            "IF": {
+              "concept": "IF",
+              "trigger": "if",
+              "start": 59,
+              "end": 61
+            }
+          },
+          "DISTANCE_2_POINTS": {
+            "DISTANCE": {
+              "concept": "DISTANCE",
+              "trigger": "distance",
+              "start": 77,
+              "end": 85
+            },
+            "BETWEEN": {
+              "concept": "BETWEEN",
+              "trigger": "between",
+              "start": 86,
+              "end": 93
+            }
+          },
+          "AIRCRAFT": {
+            "UNMANNED_AIRCRAFT": {
+              "concept": "UNMANNED_AIRCRAFT",
+              "trigger": "drone",
+              "start": 17,
+              "end": 22
+            }
+          },
+          "CONSTRUCTION": {
+            "concept": "CONSTRUCTION",
+            "trigger": "building",
+            "start": 110,
+            "end": 118
+          },
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "less than",
+            "start": 122,
+            "end": 131
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "100",
+            "start": 132,
+            "end": 135
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 136,
+            "end": 137
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "The drone shall conduct an operation within visual range of sight (VLOS) at a height above the ground of not more than 120 m.",
+  "language": "en",
+  "analysis": {
+    "MR_AIRCRAFT_OPERATION": {
+      "NON_HUMAN_ACTOR": {
+        "AIRCRAFT": {
+          "UNMANNED_AIRCRAFT": {
+            "concept": "UNMANNED_AIRCRAFT",
+            "trigger": "drone",
+            "start": 4,
+            "end": 9
+          }
+        }
+      },
+      "DUTY": {
+        "AIRCRAFT_OPERATION": {
+          "VP_EXECUTE": {
+            "MODALS": {
+              "concept": "MODALS",
+              "trigger": "shall",
+              "start": 10,
+              "end": 15
+            },
+            "EXECUTE": {
+              "concept": "EXECUTE",
+              "trigger": "conduct",
+              "start": 16,
+              "end": 23
+            }
+          },
+          "OPERATION": {
+            "concept": "OPERATION",
+            "trigger": "operation",
+            "start": 27,
+            "end": 36
+          }
+        }
+      },
+      "CONDITION1": {
+        "VISIBILITY_CONDITION": {
+          "WITHIN": {
+            "concept": "WITHIN",
+            "trigger": "within",
+            "start": 37,
+            "end": 43
+          },
+          "LOS": {
+            "VLOS": {
+              "concept": "VLOS",
+              "trigger": "visual range of sight",
+              "start": 44,
+              "end": 65
+            }
+          }
+        }
+      },
+      "CONDITION4": {
+        "DISTANCE_RESTRICTION": {
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "not more than",
+            "start": 105,
+            "end": 118
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "120",
+            "start": 119,
+            "end": 122
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 123,
+            "end": 124
+          }
+        }
+      },
+      "CONDITION5": {
+        "RELATIVE_GEO_LOCATION": {
+          "HEIGHT": {
+            "concept": "HEIGHT",
+            "trigger": "height",
+            "start": 78,
+            "end": 84
+          },
+          "ABOVE": {
+            "concept": "ABOVE",
+            "trigger": "above",
+            "start": 85,
+            "end": 90
+          },
+          "GROUND": {
+            "concept": "GROUND",
+            "trigger": "ground",
+            "start": 95,
+            "end": 101
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "The drone shall conduct an operation if the horizontal distance between the drone and a building is less than 100 m.",
+  "language": "en",
+  "analysis": {
+    "MR_AIRCRAFT_OPERATION": {
+      "NON_HUMAN_ACTOR": {
+        "AIRCRAFT": {
+          "UNMANNED_AIRCRAFT": {
+            "concept": "UNMANNED_AIRCRAFT",
+            "trigger": "drone",
+            "start": 4,
+            "end": 9
+          }
+        }
+      },
+      "DUTY": {
+        "AIRCRAFT_OPERATION": {
+          "VP_EXECUTE": {
+            "MODALS": {
+              "concept": "MODALS",
+              "trigger": "shall",
+              "start": 10,
+              "end": 15
+            },
+            "EXECUTE": {
+              "concept": "EXECUTE",
+              "trigger": "conduct",
+              "start": 16,
+              "end": 23
+            }
+          },
+          "OPERATION": {
+            "concept": "OPERATION",
+            "trigger": "operation",
+            "start": 27,
+            "end": 36
+          }
+        }
+      },
+      "CONDITION3": {
+        "DISTANCE_CONDITION": {
+          "DEPENDENCE_TRIGGER": {
+            "IF": {
+              "concept": "IF",
+              "trigger": "if",
+              "start": 37,
+              "end": 39
+            }
+          },
+          "DISTANCE_2_POINTS": {
+            "DISTANCE": {
+              "concept": "DISTANCE",
+              "trigger": "distance",
+              "start": 55,
+              "end": 63
+            },
+            "BETWEEN": {
+              "concept": "BETWEEN",
+              "trigger": "between",
+              "start": 64,
+              "end": 71
+            }
+          },
+          "AIRCRAFT": {
+            "UNMANNED_AIRCRAFT": {
+              "concept": "UNMANNED_AIRCRAFT",
+              "trigger": "drone",
+              "start": 4,
+              "end": 9
+            }
+          },
+          "CONSTRUCTION": {
+            "concept": "CONSTRUCTION",
+            "trigger": "building",
+            "start": 88,
+            "end": 96
+          },
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "less than",
+            "start": 100,
+            "end": 109
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "100",
+            "start": 110,
+            "end": 113
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 114,
+            "end": 115
+          }
+        }
+      },
+      "CONDITION4": {
+        "DISTANCE_RESTRICTION": {
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "less than",
+            "start": 100,
+            "end": 109
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "100",
+            "start": 110,
+            "end": 113
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 114,
+            "end": 115
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "The drone shall conduct an operation within visual range of sight (VLOS) if the horizontal distance between the drone and a building is less than 100 m.",
+  "language": "en",
+  "analysis": {
+    "MR_AIRCRAFT_OPERATION": {
+      "NON_HUMAN_ACTOR": {
+        "AIRCRAFT": {
+          "UNMANNED_AIRCRAFT": {
+            "concept": "UNMANNED_AIRCRAFT",
+            "trigger": "drone",
+            "start": 4,
+            "end": 9
+          }
+        }
+      },
+      "DUTY": {
+        "AIRCRAFT_OPERATION": {
+          "VP_EXECUTE": {
+            "MODALS": {
+              "concept": "MODALS",
+              "trigger": "shall",
+              "start": 10,
+              "end": 15
+            },
+            "EXECUTE": {
+              "concept": "EXECUTE",
+              "trigger": "conduct",
+              "start": 16,
+              "end": 23
+            }
+          },
+          "OPERATION": {
+            "concept": "OPERATION",
+            "trigger": "operation",
+            "start": 27,
+            "end": 36
+          }
+        }
+      },
+      "CONDITION1": {
+        "VISIBILITY_CONDITION": {
+          "WITHIN": {
+            "concept": "WITHIN",
+            "trigger": "within",
+            "start": 37,
+            "end": 43
+          },
+          "LOS": {
+            "VLOS": {
+              "concept": "VLOS",
+              "trigger": "visual range of sight",
+              "start": 44,
+              "end": 65
+            }
+          }
+        }
+      },
+      "CONDITION3": {
+        "DISTANCE_CONDITION": {
+          "DEPENDENCE_TRIGGER": {
+            "IF": {
+              "concept": "IF",
+              "trigger": "if",
+              "start": 73,
+              "end": 75
+            }
+          },
+          "DISTANCE_2_POINTS": {
+            "DISTANCE": {
+              "concept": "DISTANCE",
+              "trigger": "distance",
+              "start": 91,
+              "end": 99
+            },
+            "BETWEEN": {
+              "concept": "BETWEEN",
+              "trigger": "between",
+              "start": 100,
+              "end": 107
+            }
+          },
+          "AIRCRAFT": {
+            "UNMANNED_AIRCRAFT": {
+              "concept": "UNMANNED_AIRCRAFT",
+              "trigger": "drone",
+              "start": 4,
+              "end": 9
+            }
+          },
+          "CONSTRUCTION": {
+            "concept": "CONSTRUCTION",
+            "trigger": "building",
+            "start": 124,
+            "end": 132
+          },
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "less than",
+            "start": 136,
+            "end": 145
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "100",
+            "start": 146,
+            "end": 149
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 150,
+            "end": 151
+          }
+        }
+      },
+      "CONDITION4": {
+        "DISTANCE_RESTRICTION": {
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "less than",
+            "start": 136,
+            "end": 145
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "100",
+            "start": 146,
+            "end": 149
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 150,
+            "end": 151
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "The pilot must operate the unmanned aircraft at a distance of 8 km from the reference point of any airport or aerodrome.",
+  "language": "en",
+  "analysis": {
+    "MR_PILOT_OPERATION": {
+      "HUMAN_ACTOR": {
+        "AIRCRAFT_PILOT_OR_OPERATOR": {
+          "PILOT": {
+            "concept": "PILOT",
+            "trigger": "pilot",
+            "start": 4,
+            "end": 9
+          }
+        }
+      },
+      "DUTY": {
+        "OPERATE_AIRCRAFT": {
+          "VP_OPERATE": {
+            "MODALS": {
+              "concept": "MODALS",
+              "trigger": "must",
+              "start": 10,
+              "end": 14
+            },
+            "OPERATE": {
+              "concept": "OPERATE",
+              "trigger": "operate",
+              "start": 15,
+              "end": 22
+            }
+          },
+          "AIRCRAFT": {
+            "concept": "AIRCRAFT",
+            "trigger": "aircraft",
+            "start": 36,
+            "end": 44
+          }
+        }
+      },
+      "CONDITION4": {
+        "DISTANCE_RESTRICTION": {
+          "AT": {
+            "concept": "AT",
+            "trigger": "at",
+            "start": 45,
+            "end": 47
+          },
+          "DISTANCE": {
+            "concept": "DISTANCE",
+            "trigger": "distance",
+            "start": 50,
+            "end": 58
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "8",
+            "start": 62,
+            "end": 63
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "km",
+            "start": 64,
+            "end": 66
+          }
+        }
+      },
+      "CONDITION2": {
+        "RELATIVE_OBJECT_LOCATION": {
+          "FROM": {
+            "concept": "FROM",
+            "trigger": "from",
+            "start": 67,
+            "end": 71
+          },
+          "CONSTRUCTION": {
+            "concept": "CONSTRUCTION",
+            "trigger": "airport",
+            "start": 99,
+            "end": 106
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "SERA.5005 states that a VFR flight shall not be flown at a height less than 150 m above the ground.",
+  "language": "en",
+  "analysis": {
+    "MR_RULE_DECLARATION": {
+      "RULE": {
+        "AIR_REGULATION": {
+          "SERA_REGULATION": {
+            "concept": "SERA_REGULATION",
+            "trigger": "SERA.5005",
+            "start": 0,
+            "end": 9
+          }
+        }
+      },
+      "DUTY": {
+        "DECLARE": {
+          "concept": "DECLARE",
+          "trigger": "states",
+          "start": 10,
+          "end": 16
+        }
+      },
+      "CONDITION1": {
+        "FLIGHT_CONDITION": {
+          "THAT_WHAT": {
+            "concept": "THAT_WHAT",
+            "trigger": "that",
+            "start": 17,
+            "end": 21
+          },
+          "RULE_TYPE_FLIGHT": {
+            "concept": "RULE_TYPE_FLIGHT",
+            "trigger": "VFR flight",
+            "start": 24,
+            "end": 34
+          },
+          "PROHIBITION": {
+            "concept": "PROHIBITION",
+            "trigger": "shall not",
+            "start": 35,
+            "end": 44
+          },
+          "FLY": {
+            "concept": "FLY",
+            "trigger": "flown",
+            "start": 48,
+            "end": 53
+          }
+        }
+      },
+      "CONDITION2": {
+        "DISTANCE_RESTRICTION": {
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "less than",
+            "start": 66,
+            "end": 75
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "150",
+            "start": 76,
+            "end": 79
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 80,
+            "end": 81
+          }
+        }
+      },
+      "CONDITION3": {
+        "RELATIVE_GEO_LOCATION": {
+          "HEIGHT": {
+            "concept": "HEIGHT",
+            "trigger": "height",
+            "start": 59,
+            "end": 65
+          },
+          "ABOVE": {
+            "concept": "ABOVE",
+            "trigger": "above",
+            "start": 82,
+            "end": 87
+          },
+          "GROUND": {
+            "concept": "GROUND",
+            "trigger": "ground",
+            "start": 92,
+            "end": 98
+          }
+        }
+      }
+    }
+  }
+},
+{
+  "txt": "SERA.5005 states that a VFR flight shall not be flown at a height less than 150 m above the ground except in case of take-off or landing.",
+  "language": "en",
+  "analysis": {
+    "MR_RULE_DECLARATION": {
+      "RULE": {
+        "AIR_REGULATION": {
+          "SERA_REGULATION": {
+            "concept": "SERA_REGULATION",
+            "trigger": "SERA.5005",
+            "start": 0,
+            "end": 9
+          }
+        }
+      },
+      "DUTY": {
+        "DECLARE": {
+          "concept": "DECLARE",
+          "trigger": "states",
+          "start": 10,
+          "end": 16
+        }
+      },
+      "CONDITION1": {
+        "FLIGHT_CONDITION": {
+          "THAT_WHAT": {
+            "concept": "THAT_WHAT",
+            "trigger": "that",
+            "start": 17,
+            "end": 21
+          },
+          "RULE_TYPE_FLIGHT": {
+            "concept": "RULE_TYPE_FLIGHT",
+            "trigger": "VFR flight",
+            "start": 24,
+            "end": 34
+          },
+          "PROHIBITION": {
+            "concept": "PROHIBITION",
+            "trigger": "shall not",
+            "start": 35,
+            "end": 44
+          },
+          "FLY": {
+            "concept": "FLY",
+            "trigger": "flown",
+            "start": 48,
+            "end": 53
+          }
+        }
+      },
+      "CONDITION2": {
+        "DISTANCE_RESTRICTION": {
+          "UNDER": {
+            "concept": "UNDER",
+            "trigger": "less than",
+            "start": 66,
+            "end": 75
+          },
+          "NR": {
+            "concept": "NR",
+            "trigger": "150",
+            "start": 76,
+            "end": 79
+          },
+          "UNIT_DISTANCE": {
+            "concept": "UNIT_DISTANCE",
+            "trigger": "m",
+            "start": 80,
+            "end": 81
+          }
+        }
+      },
+      "CONDITION3": {
+        "RELATIVE_GEO_LOCATION": {
+          "HEIGHT": {
+            "concept": "HEIGHT",
+            "trigger": "height",
+            "start": 59,
+            "end": 65
+          },
+          "ABOVE": {
+            "concept": "ABOVE",
+            "trigger": "above",
+            "start": 82,
+            "end": 87
+          },
+          "GROUND": {
+            "concept": "GROUND",
+            "trigger": "ground",
+            "start": 92,
+            "end": 98
+          }
+        }
+      },
+      "EXCEPTION": {
+        "EXCEPTION_RESTRICTION": {
+          "UNLESS": {
+            "concept": "UNLESS",
+            "trigger": "except in case of",
+            "start": 99,
+            "end": 116
+          },
+          "TAKE_OFF": {
+            "concept": "TAKE_OFF",
+            "trigger": "take-off",
+            "start": 117,
+            "end": 125
+          },
+          "LANDING": {
+            "concept": "LANDING",
+            "trigger": "landing",
+            "start": 129,
+            "end": 136
+          }
+        }
+      }
+    }
+  }
+}
+]
