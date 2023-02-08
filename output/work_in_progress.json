@@ -1,5 +1,5 @@
 {
-    "document": {
+    "document_metadata": {
         "name": "Document 1",
         "language": "en",
         "domain": "Drone laws",
@@ -15,7 +15,7 @@
         "version": "1.0",
         "uri": "https://example.com/document1"
     },
-    "title": {
+    "document_data": {
 	"uri": "https://example.com/document1_title1",
         "name": "Title1",
         "sections": [
